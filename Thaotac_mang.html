@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Thao tac Mang</title>
+	<style>
+		body { padding-top: 50px; text-align: center; }
+	</style>
+</head>
+<body>
+	<h1>Sample Screen:</h1>
+	<input type="text" id="txtNhap" value="">
+	<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array()">
+	<input type="button" id="btnDisplay" value="Display" onclick="display_array()">
+	<h3 id="demo"></h3>
+	<script>
+		let nhap = document.getElementById('txtNhap').value;
+		let x = 0;
+		let array = Array();
+
+		function add_element_to_array() {
+			array[x] = document.getElementById('txtNhap').value;
+			alert("Element: " + array[x] + " Add at index " + x);
+			x++;
+			document.getElementById('txtNhap').value = "";
+		}
+
+		function display_array() {
+			let e = "<hr>";
+			for (let i = 0; i < array.length; i++) {
+				e += "Element " + i + " = " + array[i] + "<br>";
+			}
+			document.getElementById('demo').innerHTML = e;
+		}
+	</script>
+</body>
+</html>
